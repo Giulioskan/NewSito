@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiting Merchandising</title>
+    <link rel="stylesheet" href="stile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <!-- Header con logo in alto a sinistra e banner -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo_sito.png" alt="Logo Agenzia" >
+            </a>
+        </div>
+        <div class="banner">
+            <div class="banner-content">
+                <h1>Recruiting Merchandising</h1>
+                <p class="slogan">Agenzia per reclutamento dalle grandi aziende merchandiser per la grande distribuzione.</p>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Menu di navigazione fisso con menu hamburger per mobile -->
+    <nav>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i> <!-- Icona hamburger -->
+        </div>
+        <ul class="nav-links">
+            <li><a href="#chi-siamo">Chi Siamo</a></li>
+            <li><a href="#servizi">Servizi</a></li>
+            <li class="dropdown">
+                <button class="dropbtn">G.D.O</button>
+                <div class="dropdown-content">
+                    <a href="https://www.tigros.it" target="_blank">
+                        <img src="logo_tigros.png" alt="Tigros"> Tigros
+                    </a>
+                    <a href="https://www.unes.it" target="_blank">
+                        <img src="logo_unes.png" alt="Unes"> Unes
+                    </a>
+                    <a href="https://www.bennet.com" target="_blank">
+                        <img src="logo_bennet.png" alt="Bennet"> Bennet
+                    </a>
+                    <a href="https://www.iperal.it" target="_blank">
+                        <img src="logo_iperal.png" alt="Iperal"> Iperal
+                    </a>
+                    <a href="https://www.migros.ch/it" target="_blank">
+                        <img src="logo_migros.png" alt="Migros"> Migros
+                    </a>
+                    <a href="https://rossettogroup.it/" target="_blank">
+                        <img src="logo_rossetto.png" alt="Rossetto"> Rossetto
+                    </a>
+                    <a href="https://www.supertosano.com/" target="_blank">
+                        <img src="logo_tosano.png" alt="Tosano"> Tosano
+                    </a>
+                    <a href="https://www.carrefour.it" target="_blank">
+                        <img src="logo_carrefour.png" alt="Carrefour"> Carrefour
+                    </a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn">Aziende Partner</button>
+                <div class="dropdown-content">
+                    <a href="https://abcosmetique.com/it/" target="_blank">
+                        <img src="logo_abc.png" alt="ABC Profumeria"> ABC Profumeria
+                    </a>
+                    <a href="http://www.kartakanta.com" target="_blank">
+                        <img src="logo_karta.png" alt="Karta Kanta"> Karta Kanta
+                    </a>
+                    <a href="https://www.mirato.it/" target="_blank">
+                        <img src="logo_mirato.png" alt="Mirato Provenzali"> Mirato Provenzali
+                    </a>
+                    <a href="http://www.onetoone.com" target="_blank">
+                        <img src="logo_onetoone.png" alt="One to One"> One to One
+                    </a>
+                    <a href="https://www.sbsmobile.com/ita/it/" target="_blank">
+                        <img src="logo_sbs.png" alt="SBS"> SBS
+                    </a>
+                </div>
+            </li>
+            <li><a href="#contatti">Contatti</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sezione "Chi siamo" -->
+    <section id="chi-siamo" class="container">
+        <h2>Chi Siamo</h2>
+        <p>Siamo una azienda che da 30 anni è inserita nella grande distribuzione, offriamo servizio di merchandising per aziende presenti in G.D.O (Grande Distribuzione Organizzata).</p>
+        <p>La nostra missione è garantire una gestione ottimale dei punti vendita, coordinare l'allestimento e curare la presentazione dei prodotti, assicurando una maggiore visibilità e promozione delle merci esposte.</p>
+        <p>Con un team di esperti, aiutiamo le aziende a migliorare la loro presenza sul mercato e a raggiungere risultati migliori in termini di vendite e gestione operativa.</p>
+    </section>
+
+    <!-- Sezione Servizi -->
+    <section id="servizi" class="container">
+        <h2>I Nostri Servizi</h2>
+        <ul>
+            <li><i class="fas fa-check"></i> Gestione completa del punto vendita</li>
+            <li><i class="fas fa-check"></i> Ottimizzazione dell'inventario</li>
+            <li><i class="fas fa-check"></i> Allestimento e visual merchandising</li>
+            <li><i class="fas fa-check"></i> Gestione promozioni</li>
+            <li><i class="fas fa-check"></i> Esposizione merce</li>
+        </ul>
+    </section>
+
+    <!-- Sezione Contatti -->
+    <section id="contatti" class="container">
+        <h2>Contatti</h2>
+        <p>Per maggiori informazioni, puoi contattarci via email a: <a href="mailto:alberto.giuliotti@abcosmetique.it">alberto.giuliotti@abcosmetique.it</a> o tramite numero telefonico: 3357786348</p>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        // Funzione per aprire/chiudere il menu hamburger
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
+        }
+
+        // Funzione per gestire le dropdown
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        dropdowns.forEach(dropdown => {
+            const dropbtn = dropdown.querySelector('.dropbtn');
+            dropbtn.addEventListener('click', function(event) {
+                event.preventDefault(); // Previene il comportamento di navigazione predefinito
+                const dropdownContent = dropdown.querySelector('.dropdown-content');
+                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block'; // Alterna la visibilità
+            });
+        });
+
+        // Chiudi il menu se si clicca fuori
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                dropdowns.forEach(dropdown => {
+                    const openDropdown = dropdown.querySelector('.dropdown-content');
+                    if (openDropdown.style.display === 'block') {
+                        openDropdown.style.display = 'none'; // Nascondi la tendina
+                    }
+                });
+            }
+        }
+
+        // Smooth scrolling
+        const links = document.querySelectorAll('nav a[href^="#"]');
+        for (let link of links) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        }
+    </script>
+</body>
+</html>
